@@ -1,0 +1,320 @@
+
+
+
+@media only screen and (max-width: 767px) {
+    /* Estilos específicos para dispositivos celulares */
+    header{
+        display:flex;
+        height: 9vh;
+        justify-content: space-between;
+        padding: 0.1rem 0.5rem;
+        background-color: var(--color-principal-claro);
+    }
+    header h1{
+        margin: auto;
+        font-size: 2rem;
+        color: var(--color-principal-obscuro);
+    }
+    header a{
+        width: 20vw;
+        text-align: end;
+    }
+    header a img{
+        height: 100%;
+    }
+    #cerrar:active {
+        transform: scale(0.9);
+    }
+    main{
+        margin-top: 3vh;
+    }
+    .puntuacion{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40vw;
+        height: 40vw;
+        margin: 1vh 1vh;
+    }
+    #pregunta{
+        width: 90vw;
+        margin: 0% auto;
+        height: 20vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.8rem;
+        background-color: var(--color-secundario2) ;
+        color:black;
+        font-size: 1rem;
+    }
+    #strikes{
+        width: 100vw;
+        height: 15vw;
+        display: flex;
+    }
+    #strikes img{
+        height: 100%;
+        margin: 0px auto;   
+    }
+}
+
+/* Media query para pantallas horizontales */
+@media only screen and (orientation: landscape) {
+    /* Estilos específicos para pantallas horizontales */
+    header{
+        display:flex;
+        height: 8vh;
+        justify-content: space-between;
+        padding: 0.3rem 1rem;
+        background-color: var(--color-principal-claro);
+    }
+    header h1{
+        margin: auto;
+        font-size: 1.5rem;
+        color: var(--color-principal-obscuro);
+    }
+    header a{
+        width: 5vw;
+        text-align: end;
+    }
+    header a img{
+        height: 100%;
+    }
+    #cerrar:hover {
+        transform: scale(1.1);
+    }
+    #cerrar:active {
+        transform: scale(1);
+    }
+    main{
+        margin: 5vh 2vw ;
+
+    }
+    #tablero{
+        display: grid;
+        grid-template-columns: 20vw 50vw 20vw; /* 3 columnas */
+        grid-gap: 0px 2.5vw;
+    }
+    .puntuacion{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20vw;
+        height: 20vw;        
+        color:navy;
+        font-size: 8vw;
+        margin: auto;
+        justify-self: center;
+        align-self: center;
+        background-image: url(../imagenes/puntuacion.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .puntuacion-activa{
+        font-size: 7.7vw;
+        color: var(--color-secundario1);
+    }
+    
+    #strikes{
+        width: auto;
+        height: 10vw;  
+        grid-column: 2;
+        grid-row: 1;
+        text-align: center;
+        padding-bottom: 2vh;
+    }
+    #strikes img{
+        height: 100%;
+    }
+    
+    #puntos1{
+        grid-column: 1;
+        grid-row: span 2;
+    }
+
+    #puntos2{
+        grid-column: 3;
+        grid-row: span 2;
+    }
+    #pregunta{
+        width: 100%;
+        height: 10vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2rem;
+        color:var(--color-principal-claro);
+        font-size: 2vw;
+        grid-column: 2;
+        grid-row: 2;
+        background-image: url(../imagenes/pregunta.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        padding: 0vh 2.7vw;
+    }
+    #respuestas{
+        margin: 5vh auto 0vh auto;
+        width: 50vw;
+    }
+
+    .respuesta {
+        --r: .8em; /* control the ribbon shape */
+    
+        padding-inline: calc(var(--r) + .3em);
+        line-height: 1.8;
+        clip-path: polygon(0 0,100% 0,calc(100% - var(--r)) 50%,100% 100%,0 100%, var(--r) 50%);
+    
+        width: fit-content;
+    }
+    .respuesta{
+        background-color: var(--color-principal-claro);
+        padding: 0.1rem;
+        width: 100%;
+        height: 7vh;
+        margin: 1vh 0vw;    
+        color:navy;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    /* HTML: <div class="tooltip">This is a Tooltip with a border and without border radius. Border and background have a solid coloration </div> */
+.tooltip {
+    color: #fff;
+    font-size: 1.5vw;
+    max-width: 50vw;
+    width: 25vw;
+    margin: auto;
+    text-align: center;
+  }
+  .tooltip {
+    /* triangle dimension */
+    --a: 90deg; /* angle */
+    --h: 1em; /* height */
+  
+    --p: 50%; /* triangle position (0%:top 100%:bottom) */
+    --b: 5px; /* border width */
+  
+    padding: 1em;
+    clip-path: polygon(0 100%,100% 100%,100% 0,0 0,
+      0 max(0%  ,var(--p) - var(--h)*tan(var(--a)/2)),
+      calc(-1*var(--h)) var(--p),
+      0 min(100%,var(--p) + var(--h)*tan(var(--a)/2)));
+    border-image: fill 0//0 var(--h)
+      conic-gradient(#18173b 0 0); /* the border color */
+    position: relative;
+  }
+  .tooltip:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0 var(--b);
+    clip-path: polygon(0 100%,100% 100%,100% 0,0 0,
+      0 max(       var(--b),var(--p) - var(--h)*tan(var(--a)/2) + var(--b)*tan(45deg - var(--a)/4)),
+      calc(-1*var(--h) - var(--b)*(1 - 1/sin(var(--a)/2))) var(--p),
+      0 min(100% - var(--b),var(--p) + var(--h)*tan(var(--a)/2) - var(--b)*tan(45deg - var(--a)/4)));
+    border-image: fill 0/var(--b) 0/0 var(--h)
+      conic-gradient(var(--color-secundario1) 0 0); /* the background color */
+  }
+  #posible-respuesta{
+    color: #333333;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5vw;
+  }
+  #myVideo {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+    #seleccion-equipo{
+        width: auto;
+        margin: 5vh auto;
+        text-align: center;
+    }
+
+    #boton-jugar{
+        width: 10vw;
+        height: 10vw;
+    }
+    #boton-jugar:hover{
+        transform: scale(1.2);
+    }
+    #boton-jugar:active {
+        transform: scale(1);
+    }
+
+    #opciones-equipo{
+        display: flex;
+        justify-content: center;
+        margin-top: 6vw;
+    }
+    .label-equipo{
+        font-size: 1.7vw;
+        width: 12vw;
+        height: 5vh;
+        background-color: var(--color-principal-claro);
+        color: #333333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .label-equipo:hover{
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+    .label-equipo:active{
+        transform: scale(1);
+        cursor: pointer;
+    }
+    #label-equipo1{
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+    }
+    #label-equipo2{
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+    .label-equipo-seleccionado{
+        font-size: 1.7vw;
+        width: 12vw;
+        height: 5vh;
+        background-color: var(--color-secundario1);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .label-equipo-seleccionado:hover{
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+    .label-equipo-seleccionado:active{
+        transform: scale(1);
+        cursor: pointer;
+    }
+    .pregunta-oculta{
+        transform: scale(1.5);
+        color: var(--color-principal-obscuro) !important;
+    }
+    .pregunta-oculta:hover{
+        cursor: pointer;
+        transform: scale(1.8);
+        color: var(--color-principal-claro) !important;
+    }
+    .exponer-pregunta{
+        transform: scale(1.8);
+        color: var(--color-principal-claro) !important;
+    }
+    .oculto{
+        display: none;
+    }
+
+}

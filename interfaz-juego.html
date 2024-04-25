@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/interfaz-juego.css">
+    <script src="js/video.js" defer></script>
+    <script src="js/data.js"></script>
+    <script src="js/auxiliares.js"></script>
+    <script src="js/juguemos.js" defer></script>
+    
+    <title>77 Cristianos dijeron - Juguemos</title>
+</head>
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="video/background1.mp4" type="video/mp4">
+    </video>
+    <header>
+        <img src="imagenes/logo-oscuro.png" alt="Logo 77 Cristianos dijeron">
+        <h1>Juguemos</h1>
+        <a id="cerrar" href="index.html"><img src="imagenes/cerrar.png" alt="cerrar juego"></a>
+    </header>
+    <main>
+        <section id="tablero">
+            <div id="strikes"><img id="img-strikes" src="imagenes/error1.png" alt="cantidad de errores"></div>
+            <p class="puntuacion" id="puntos1">30</p>
+            <p class="puntuacion" id="puntos2">300</p>
+            <p class="" id="pregunta">Pregunta</p>
+        </section>  
+        <section id="seleccion-equipo">
+            <img class="oculto" id="boton-jugar" src="imagenes/jugar.png" alt="Boton iniciar juego con equipo">
+            <div id="opciones-equipo">
+                <input class="oculto" type="radio" name="juega-equipo" id="juega-equipo1" value="juega-equipo1">
+                <label class="label-equipo-seleccionado" id="label-equipo1" for="juega-equipo1">Equipo 1</label>
+                <label class="label-equipo" id="label-equipo2" for="juega-equipo2">Equipo 2</label>
+                <input class="oculto" type="radio" name="juega-equipo" id="juega-equipo2" value="juega-equipo2">
+            </div>
+        </section>
+        <section id="respuestas">
+            <div class="respuesta" id="respuesta1"><p>Respuesta1</p><p>Valor1</p></div>
+            <div class="respuesta" id="respuesta2"><p>Respuesta1</p><p>Valor1</p></div>
+            <div class="respuesta" id="respuesta3"><p>Respuesta1</p><p>Valor1</p></div>
+        </section>
+        <form id="introducir-respuesta" class="tooltip" action="">
+            <label for="posible-respuesta">Escribe tu respuesta:</label>
+            <input type="text" name="posible-respuesta" id="posible-respuesta">
+        </form>
+    </main>
+</body>
+</html>

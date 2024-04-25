@@ -1,0 +1,49 @@
+/* Media query para dispositivos celulares */
+@media only screen and (max-width: 767px) {
+    /* Estilos específicos para dispositivos celulares */
+    #logo-inicio{
+        width: 70vw;
+        margin: 10vh auto;
+        display: block;
+    }
+    #btn-empezar{
+        display: block;
+        margin: 20vh auto;
+        width: 70vw;
+        font-size: 1.7rem;
+    }
+}
+
+/* Media query para pantallas horizontales */
+@media only screen and (orientation: landscape) {
+    /* Estilos específicos para pantallas horizontales */
+    #logo-inicio{
+        height: 50vh;
+        margin: 5vh auto;
+        display: block;
+    }
+    #btn-empezar{
+        display: block;
+        margin: 20vh auto;
+        width: 25vw;
+        max-width: 80vw;
+        font-size: 1.7rem;
+    }
+    #myVideo {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    
+}
+
+
+
+
