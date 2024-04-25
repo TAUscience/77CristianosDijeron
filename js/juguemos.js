@@ -7,6 +7,8 @@ let contador2=220;
 
 // Bucle for que se repetirá n veces
 for (let i = 0; i < n_preguntas; i++) {
+    const audioRonda=document.getElementById("audio-ronda");
+    audioRonda.play()
     let preguntasUsadas=[]; //Almacena indices de preguntas que ya ocurrieron
 
     actualizarPuntuacion(contador1,contador2);
