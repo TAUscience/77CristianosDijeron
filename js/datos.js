@@ -14,7 +14,6 @@ console.info("preguntar");
 }
 
 
-
 function enviar(){
     let element = document.getElementById("posible-respuesta");
     let respuesta=element.value;
