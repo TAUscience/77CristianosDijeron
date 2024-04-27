@@ -82,4 +82,7 @@ function colocarRespuesta(indice, respuesta, valor, valoresResp, equipo){
 function siguiente(){
   limpiarRespuestas();
   esconderRespuestas();
+  document.getElementById("pregunta").innerHTML="";
+
+  iterarPreguntas();
 }
