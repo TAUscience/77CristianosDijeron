@@ -135,3 +135,17 @@ function actualizarErrores(errores){ //El numero entero que recibe, define la ca
 function numeroAleatorio(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+function limpiarRespuestas(){
+    document.getElementById("responseTexto1").innerHTML="";
+    document.getElementById("responseValor1").innerHTML="";
+
+    document.getElementById("responseTexto2").innerHTML="";
+    document.getElementById("responseValor2").innerHTML="";
+
+    document.getElementById("responseTexto3").innerHTML="";
+    document.getElementById("responseValor3").innerHTML="";
+
+    document.getElementById("puntos1").innerHTML="";
+   
+}

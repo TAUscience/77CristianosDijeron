@@ -12,6 +12,8 @@ function inicializar(){
     esconderRespuestas();
     esconderContestar();
     iterarPreguntas();
+    limpiarRespuestas();
+
 }
 
 

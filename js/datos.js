@@ -76,6 +76,10 @@ function colocarRespuesta(indice, respuesta, valor, valoresResp, equipo){
     rv.innerHTML=valor;
     ve.innerHTML=valor;
     
+
     
-    
+}
+function siguiente(){
+  limpiarRespuestas();
+  esconderRespuestas();
 }
