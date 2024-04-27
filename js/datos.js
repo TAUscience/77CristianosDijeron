@@ -77,4 +77,5 @@ function colocarRespuesta(indice, respuesta, valor, valoresResp, equipo){
     ve.innerHTML=valor;
     
     
+    
 }
