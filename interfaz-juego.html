@@ -9,10 +9,11 @@
     <script src="js/data.js"></script>
     <script src="js/auxiliares.js"></script>
     <script src="js/juguemos.js" defer></script>
+    <script src="js/datos.js" defer></script>
     
     <title>77 Cristianos dijeron - Juguemos</title>
 </head>
-<body>
+<body onload="inicializar()">
     <video autoplay muted loop id="myVideo">
         <source src="video/background1.mp4" type="video/mp4">
     </video>
@@ -22,30 +23,46 @@
         <a id="cerrar" href="index.html"><img src="imagenes/cerrar.png" alt="cerrar juego"></a>
     </header>
     <main>
-        <section id="tablero">
+       
+        <section id="tablero" >
             <div id="strikes"><img id="img-strikes" src="imagenes/error1.png" alt="cantidad de errores"></div>
-            <p class="puntuacion" id="puntos1">30</p>
-            <p class="puntuacion" id="puntos2">300</p>
-            <p class="" id="pregunta">Pregunta</p>
+            <p class="puntuacion" id="puntos1"></p>
+            <p class="puntuacion" id="puntos2"></p>
+        <div class="" id="pregunta">Pregunta</div>
         </section>  
         <section id="seleccion-equipo">
             <img class="oculto" id="boton-jugar" src="imagenes/jugar.png" alt="Boton iniciar juego con equipo">
+            <!--<input type="button" value="Inicializar" id="btnInicializar" onclick="inicializar()" >-->
             <div id="opciones-equipo">
-                <input class="oculto" type="radio" name="juega-equipo" id="juega-equipo1" value="juega-equipo1">
+                <input class="oculto" type="radio" name="juega-equipo" id="juega-equipo1" value="juega-equipo1" onclick="jugarEquipo(1)">
                 <label class="label-equipo-seleccionado" id="label-equipo1" for="juega-equipo1">Equipo 1</label>
                 <label class="label-equipo" id="label-equipo2" for="juega-equipo2">Equipo 2</label>
-                <input class="oculto" type="radio" name="juega-equipo" id="juega-equipo2" value="juega-equipo2">
+                <input class="oculto" type="radio" name="juega-equipo" id="juega-equipo2" value="juega-equipo2"  onclick="jugarEquipo(2)">
             </div>
         </section>
         <section id="respuestas">
-            <div class="respuesta" id="respuesta1"><p>Respuesta1</p><p>Valor1</p></div>
-            <div class="respuesta" id="respuesta2"><p>Respuesta1</p><p>Valor1</p></div>
-            <div class="respuesta" id="respuesta3"><p>Respuesta1</p><p>Valor1</p></div>
+            <div class="respuesta" id="respuesta1">
+                <div id="responseTexto1"></div>
+                <div id="responseValor1"></div>
+            </div>
+            <div class="respuesta" id="respuesta2">
+                <div id="responseTexto2"></div>
+                <div id="responseValor2"></div>
+            </div>
+            <div class="respuesta" id="respuesta3">
+                <div id="responseTexto3"></div>
+                <div id="responseValor3"></div>
+            </div>
         </section>
-        <form id="introducir-respuesta" class="tooltip" action="">
-            <label for="posible-respuesta">Escribe tu respuesta:</label>
-            <input type="text" name="posible-respuesta" id="posible-respuesta">
-        </form>
+
+        <div id="contestar">
+            <form id="introducir-respuesta" class="tooltip" action="">
+                <label for="posible-respuesta">Escribe tu respuesta:</label>
+                <input type="text" name="posible-respuesta" id="posible-respuesta">
+                <input type="button" value="enviar" id="btnEnviar" onclick="enviar()" >
+            </form>
+        </div>
+        
     </main>
 </body>
 </html>

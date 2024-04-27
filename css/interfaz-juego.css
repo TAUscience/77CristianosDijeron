@@ -37,7 +37,7 @@
         margin: 1vh 1vh;
     }
     #pregunta{
-        width: 90vw;
+        width: 80%;
         margin: 0% auto;
         height: 20vw;
         display: flex;
@@ -46,7 +46,7 @@
         border-radius: 0.8rem;
         background-color: var(--color-secundario2) ;
         color:black;
-        font-size: 1rem;
+        font-size: 20px;
     }
     #strikes{
         width: 100vw;
@@ -100,7 +100,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 20vw;
+        width: 15vw;
         height: 20vw;        
         color:navy;
         font-size: 8vw;
@@ -138,20 +138,22 @@
         grid-row: span 2;
     }
     #pregunta{
-        width: 100%;
+        width: 70%;
         height: 10vw;
+        align-self: center;
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 2rem;
         color:var(--color-principal-claro);
-        font-size: 2vw;
+        font-size: 20px;
         grid-column: 2;
         grid-row: 2;
         background-image: url(../imagenes/pregunta.png);
         background-size: contain;
         background-repeat: no-repeat;
         padding: 0vh 2.7vw;
+    
     }
     #respuestas{
         margin: 5vh auto 0vh auto;
@@ -315,6 +317,11 @@
     }
     .oculto{
         display: none;
+    }
+
+    .contorno{
+        border: 2px solid;
+        color:red;
     }
 
 }

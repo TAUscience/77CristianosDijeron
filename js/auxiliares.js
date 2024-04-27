@@ -34,6 +34,19 @@ function actualizarPuntuacion(p1,p2){
 }
 
 
+function esconderContestar(){
+  let element = document.getElementById("contestar");
+  element.classList.add("oculto");
+  //let element2 = document.getElementById("introducir-respuesta")
+  //element2.classList.add("oculto");
+}
+
+function mostrarContestar(){
+  let element = document.getElementById("contestar");
+  element.classList.remove("oculto");
+}
+
+
 // Oculta toda la interfaz de respuestas
 function esconderRespuestas(){
   let element = document.getElementById("respuestas");
@@ -57,6 +70,18 @@ function obtenerRespuestas(indice){ // Recibe un indice entero como entrada que 
   return [r1,r2,r3]; // Devuelve una lista de 3 elementos con las 3 respuesta en cadenas
 }
 
+/*
+obtenerValoresRespuestas
+@param indice Obtener que busca en el vector la información solicitada.
+Response Regresa 3 respuestas.
+*/
+function obtenerValoresRespuestas(indice){ 
+  v1=DB_PREGUNTA[indice].valor1;
+  v2=DB_PREGUNTA[indice].valor2;
+  v3=DB_PREGUNTA[indice].valor3;
+
+  return [v1,v2,v3];
+}
 
 // Coloca la interfaz de la pregunta en la posición normal
 function normalizarPregunta(){

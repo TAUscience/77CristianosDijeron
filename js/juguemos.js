@@ -2,29 +2,47 @@
 const n_preguntas = DB_PREGUNTA.length; //Longitud de la lista de preguntas
 
 //Puntaje de cada equipo
-let contador1=300; 
-let contador2=220; 
+let contador1=0; 
+let contador2=0; 
 
-// Bucle for que se repetirá n veces
-for (let i = 0; i < n_preguntas; i++) {
-    let preguntasUsadas=[]; //Almacena indices de preguntas que ya ocurrieron
+let preguntaNueva;
 
-    actualizarPuntuacion(contador1,contador2);
-    actualizarErrores(1);
+
+function inicializar(){
     esconderRespuestas();
-
-    let preguntaNueva=indicePreguntaAleatoria(preguntasUsadas,0,n_preguntas-1)
-    manejoInicialPregunta(preguntaNueva);
-    
-    //mostrarRespuestas()
-    let animacionPuntuacion=resaltarPuntuacionActiva('puntos2', 'puntuacion-activa');
-    console.log("Iteración número", i + 1);
-    
-
-
-    //Agregar pregunta actual a lista de preguntas usadas
-    preguntasUsadas.push(preguntaNueva);
+    esconderContestar();
+    iterarPreguntas();
 }
+
+
+
+function iterarPreguntas(){
+
+        // Bucle for que se repetirá n veces
+    for (let i = 0; i < n_preguntas; i++) {
+        let preguntasUsadas=[]; //Almacena indices de preguntas que ya ocurrieron
+
+        actualizarPuntuacion(contador1,contador2);
+        actualizarErrores(1);
+        //esconderRespuestas();
+
+        preguntaNueva=indicePreguntaAleatoria(preguntasUsadas,0,n_preguntas-1)
+  
+        manejoInicialPregunta(preguntaNueva);
+        
+        //mostrarRespuestas()
+        let animacionPuntuacion=resaltarPuntuacionActiva('puntos2', 'puntuacion-activa');
+        //console.log("Iteración número", i + 1);
+     
+        //Agregar pregunta actual a lista de preguntas usadas
+        preguntasUsadas.push(preguntaNueva);
+    }
+
+    console.info("Id pregunta: "+preguntaNueva);
+    console.info("pregunta: "+obtenerPregunta(preguntaNueva));
+    console.info("numeroIndice ->"+obtenerRespuestas(preguntaNueva));
+}
+
 
 
 
