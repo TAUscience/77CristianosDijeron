@@ -24,10 +24,7 @@ function inicializar(){
 
 function iterarPreguntas(){
 
-    console.log(preguntasUsadas.length);
-
     if(preguntasUsadas.length<n_preguntas){
-        console.log(preguntasUsadas);
         preguntaNueva=indicePreguntaAleatoria(preguntasUsadas,1,n_preguntas)
   
         manejoInicialPregunta(preguntaNueva);

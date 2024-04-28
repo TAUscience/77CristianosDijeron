@@ -8,6 +8,7 @@ $(document).ready(function(){
 function jugarEquipo(idEquipo){
   mostrarContestar();
   normalizarPregunta();
+  estilo_equipo_activo(idEquipo);
 }
 
 function enviar(){

@@ -149,3 +149,23 @@ function limpiarRespuestas(){
     document.getElementById("puntos1").innerHTML="";
    
 }
+
+function estilo_equipo_activo(idEquipo){
+  if(idEquipo==1){
+    lbl_activo=document.getElementById("label-equipo1");
+    lbl_activo.classList.add("label-equipo-seleccionado");
+    lbl_activo.classList.remove("label-equipo");
+
+    lbl_inactivo=document.getElementById("label-equipo2");
+    lbl_inactivo.classList.add("label-equipo");
+    lbl_inactivo.classList.remove("label-equipo-seleccionado");
+  }else{
+    lbl_activo=document.getElementById("label-equipo2");
+    lbl_activo.classList.add("label-equipo-seleccionado");
+    lbl_activo.classList.remove("label-equipo");
+
+    lbl_inactivo=document.getElementById("label-equipo1");
+    lbl_inactivo.classList.add("label-equipo");
+    lbl_inactivo.classList.remove("label-equipo-seleccionado");
+  }
+}
