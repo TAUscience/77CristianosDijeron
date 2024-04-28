@@ -9,11 +9,6 @@ function jugarEquipo(idEquipo){
   mostrarContestar();
 }
 
-function preguntar(){
-console.info("preguntar");
-}
-
-
 function enviar(){
     let element = document.getElementById("posible-respuesta");
     let respuesta=element.value;
@@ -24,14 +19,22 @@ function enviar(){
 
     // obtener equipo
     let equipo=1;
-
+   
     console.info(respuestas);
 
     for(let i = 0; i < respuestas.length; i++){
 
       if(respuesta === respuestas[i]){
-        console.info("RESPUESTA CORRECTA");
         mostrarRespuestas();
+
+        console.info("sumarPuntos ->"+sumarPuntos);
+        console.info("valoresResp ->"+valoresResp[i]);
+
+        sumarPuntos=sumarPuntos+valoresResp[i];
+
+        console.info("sumarPuntos ->"+sumarPuntos);
+        
+
         colocarRespuesta(i, respuestas[i], valoresResp[i], valoresResp, 1);
         break;
       }else{
@@ -39,6 +42,11 @@ function enviar(){
         //break;
       }
     }
+
+    let ve= document.getElementById("puntos1");
+
+    ve.innerHTML=sumarPuntos;
+
 
 }
 
@@ -57,10 +65,13 @@ function obtenerPuntaje(indice){
 }
 
 function colocarRespuesta(indice, respuesta, valor, valoresResp, equipo){
+    
+  /*
     console.info("respuesta: "+respuesta);
     console.info("valor: "+valor);
     console.info(valoresResp);
     console.info("sort ->"+valoresResp.sort());
+    */
 
     let respuestaTexto="responseTexto"+(indice+1);
     let respuestaValor="responseValor"+(indice+1);
@@ -84,4 +95,8 @@ function siguiente(){
   document.getElementById("pregunta").innerHTML="";
 
   iterarPreguntas();
+}
+
+function sumarPuntosEquipo(){
+
 }

@@ -6,6 +6,7 @@ let contador1=0;
 let contador2=0; 
 
 let preguntaNueva;
+let sumarPuntos=0;
 
 
 function inicializar(){
@@ -13,6 +14,7 @@ function inicializar(){
     esconderContestar();
     iterarPreguntas();
     limpiarRespuestas();
+
 
 }
 
@@ -41,7 +43,7 @@ function iterarPreguntas(){
     }
 
     console.info("Id pregunta: "+preguntaNueva);
-    console.info("pregunta: "+obtenerPregunta(preguntaNueva));
+    //console.info("pregunta: "+obtenerPregunta(preguntaNueva));
     console.info("numeroIndice ->"+obtenerRespuestas(preguntaNueva));
 }
 
