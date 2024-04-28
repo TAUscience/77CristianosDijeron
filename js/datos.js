@@ -7,6 +7,7 @@ $(document).ready(function(){
 
 function jugarEquipo(idEquipo){
   mostrarContestar();
+  normalizarPregunta();
 }
 
 function enviar(){
