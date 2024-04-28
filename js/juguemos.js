@@ -12,8 +12,13 @@ let sumarPuntos=0;
 let errores=0;
 let animacionPuntuacion;
 
+let respuestasEnviadas=0;
+
 function inicializar(){
+    actualizarPuntuacion(0,0);
+    errores=0;
     actualizarErrores(errores);
+    reproducir('audio-nueva-ronda');
     esconderRespuestas();
     esconderContestar();
     iterarPreguntas();
@@ -25,6 +30,7 @@ function inicializar(){
 
 
 function iterarPreguntas(){
+    sumarPuntos=0;
 
     if(preguntasUsadas.length<n_preguntas){
         preguntaNueva=indicePreguntaAleatoria(preguntasUsadas,1,n_preguntas)

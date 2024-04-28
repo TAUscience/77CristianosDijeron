@@ -33,10 +33,10 @@
         </section>  
         <section id="seleccion-equipo">            
             <div id="opciones-equipo">
-                <input class="oculto" type="radio" name="juega-equipo" id="juega-equipo1" value="juega-equipo1" onclick="jugarEquipo(1)">
-                <label class="label-equipo" id="label-equipo1" for="juega-equipo1">Equipo 1</label>
-                <label class="label-equipo" id="label-equipo2" for="juega-equipo2">Equipo 2</label>
-                <input class="oculto" type="radio" name="juega-equipo" id="juega-equipo2" value="juega-equipo2"  onclick="jugarEquipo(2)">
+                <input class="oculto" type="radio" name="juega-equipo" id="juega-equipo1" value="juega-equipo1" >
+                <label class="label-equipo" id="label-equipo1" for="juega-equipo1" onclick="jugarEquipo(1)">Equipo 1</label>
+                <label class="label-equipo" id="label-equipo2" for="juega-equipo2" onclick="jugarEquipo(2)">Equipo 2</label>
+                <input class="oculto" type="radio" name="juega-equipo" id="juega-equipo2" value="juega-equipo2"  >
             </div>
         </section>
         <section id="respuestas">
@@ -65,5 +65,12 @@
         </div>
         
     </main>
+    <section id="audios">
+        <audio id="audio-nueva-ronda" src="audio/nueva-ronda.mp3"></audio>
+        <audio id="audio-negativo" src="audio/negativo.mp3"></audio>
+        <audio id="audio-positivo" src="audio/respuesta-correcta.mp3"></audio>
+        <audio id="audio-ganador" src="audio/puntos.mp3"></audio>
+        <audio id="audio-robo" src="audio/robo-puntos.mp3"></audio>
+    </section>
 </body>
 </html>

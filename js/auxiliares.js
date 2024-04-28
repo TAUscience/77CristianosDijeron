@@ -27,8 +27,8 @@ function noResaltarPuntuacion(elementId,className,intervalo){
 }
 // Recibe valores enteros p1 y p2 que colocará en los marcadores de puntos 1 y 2 respectivamente
 function actualizarPuntuacion(p1,p2){
-  let pnts1 = document.getElementById("puntos1");
   let pnts2 = document.getElementById("puntos2");
+  let pnts1 = document.getElementById("puntos1");
   pnts1.innerHTML=p1;
   pnts2.innerHTML=p2;
 }
@@ -145,9 +145,6 @@ function limpiarRespuestas(){
 
     document.getElementById("responseTexto3").innerHTML="";
     document.getElementById("responseValor3").innerHTML="";
-
-    document.getElementById("puntos1").innerHTML="";
-   
 }
 
 function estilo_equipo_activo(idEquipo){
@@ -175,4 +172,20 @@ function bloquearEnter(event) {
     event.preventDefault();
     return false;
   }
+}
+
+function reproducir(idAudio){
+  let audio=document.getElementById(idAudio);
+  audio.play();
+}
+
+
+function respuestaMasPopular(respuesta,respuestas){
+  for(let i=0; i<respuestas.length;i++){
+    if(respuesta<respuestas[i]){
+      console.log(respuestas[i]);
+      return false;
+    }
+  }
+  return true;
 }

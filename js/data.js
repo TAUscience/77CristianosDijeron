@@ -1,7 +1,7 @@
 const DB_PREGUNTA = [
     {id: 0, pregunta: "Fin del juego. ¡Felicidades al ganador!.", respuesta1: "1", respuesta2: "2", respuesta3: "3", valor1: 0, valor2: 0, valor3: 0},
     {id: 1, pregunta: "Menciona un animal que aparece en el Arca de Noé.", respuesta1: "Elefante", respuesta2: "León", respuesta3: "Paloma", valor1: 29, valor2: 28, valor3: 20},
-    {id: 2, pregunta: "Nombra uno de los hijos de Jacob.", respuesta1: "José", respuesta2: "Judá", respuesta3: "Leví", valor1: 59, valor2: 16, valor3: 16},
+    {id: 2, pregunta: "Nombra uno de los hijos de Jacob.", respuesta1: "José", respuesta2: "Judá", respuesta3: "Leví", valor1: 59, valor2: 16, valor3: 2},
     {id: 3, pregunta: "Nombra una de las plagas de Egipto.", respuesta1: "Ranas", respuesta2: "Sangre", respuesta3: "Primogénitos", valor1: 27, valor2: 26, valor3: 24},
     {id: 4, pregunta: "Nombra uno de los apóstoles de Jesús.", respuesta1: "Pedro", respuesta2: "Mateo", respuesta3: "Juan", valor1: 33, valor2: 32, valor3: 12},
     {id: 5, pregunta: "Nombra uno de los frutos del Espíritu Santo.", respuesta1: "Amor", respuesta2: "Paz y paciencia", respuesta3: "Templanza", valor1: 54, valor2: 15, valor3: 8},
