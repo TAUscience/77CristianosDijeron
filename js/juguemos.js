@@ -1,11 +1,13 @@
 // Definimos el número de repeticiones deseado
-const n_preguntas = DB_PREGUNTA.length; //Longitud de la lista de preguntas
-
+const n_preguntas = DB_PREGUNTA.length-1; //Longitud de la lista de preguntas
+console.log(n_preguntas);
 //Puntaje de cada equipo
 let contador1=0; 
 let contador2=0; 
 
 let preguntaNueva;
+let preguntasUsadas=[];  //Almacena indices de preguntas que ya ocurrieron
+
 let sumarPuntos=0;
 
 
@@ -22,29 +24,28 @@ function inicializar(){
 
 function iterarPreguntas(){
 
-        // Bucle for que se repetirá n veces
-    for (let i = 0; i < n_preguntas; i++) {
-        let preguntasUsadas=[]; //Almacena indices de preguntas que ya ocurrieron
+    console.log(preguntasUsadas.length);
 
-        actualizarPuntuacion(contador1,contador2);
-        actualizarErrores(1);
-        //esconderRespuestas();
-
-        preguntaNueva=indicePreguntaAleatoria(preguntasUsadas,0,n_preguntas-1)
+    if(preguntasUsadas.length<n_preguntas){
+        console.log(preguntasUsadas);
+        preguntaNueva=indicePreguntaAleatoria(preguntasUsadas,1,n_preguntas)
   
         manejoInicialPregunta(preguntaNueva);
         
-        //mostrarRespuestas()
         let animacionPuntuacion=resaltarPuntuacionActiva('puntos2', 'puntuacion-activa');
         //console.log("Iteración número", i + 1);
      
         //Agregar pregunta actual a lista de preguntas usadas
         preguntasUsadas.push(preguntaNueva);
-    }
 
-    console.info("Id pregunta: "+preguntaNueva);
-    //console.info("pregunta: "+obtenerPregunta(preguntaNueva));
-    console.info("numeroIndice ->"+obtenerRespuestas(preguntaNueva));
+        console.info("Id pregunta: "+preguntaNueva);
+        //console.info("pregunta: "+obtenerPregunta(preguntaNueva));
+        console.info("numeroIndice ->"+obtenerRespuestas(preguntaNueva));
+    }
+    else{
+        preguntaNueva=0;
+        manejoInicialPregunta(preguntaNueva);
+    }
 }
 
 

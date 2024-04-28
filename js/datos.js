@@ -6,8 +6,8 @@ $(document).ready(function(){
 */
 
 function jugarEquipo(idEquipo){
-    console.info("idEquipo ->"+idEquipo);
-    mostrarContestar();
+  mostrarContestar();
+  normalizarPregunta();
 }
 
 function enviar(){
