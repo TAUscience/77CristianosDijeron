@@ -20,7 +20,10 @@ function enviar(){
     let valoresResp=obtenerValoresRespuestas(numeroIndice);
 
     // obtener equipo
-    let equipo=1;
+    let valorActivo = document.querySelector('input[name="juega-equipo"]:checked').value;
+    console.info("valorActivo ->"+valorActivo);
+
+    let equipo=(valorActivo==='juega-equipo1'?1:2);
    
     console.info(respuestas);
 
@@ -36,8 +39,7 @@ function enviar(){
 
         console.info("sumarPuntos ->"+sumarPuntos);
         
-
-        colocarRespuesta(i, respuestas[i], valoresResp[i], valoresResp, 1);
+        colocarRespuesta(i, respuestas[i], valoresResp[i], valoresResp, equipo);
         break;
       }else{
         console.info("NO EXISTE");
@@ -45,8 +47,9 @@ function enviar(){
       }
     }
 
-    let ve= document.getElementById("puntos1");
+    let idPuntos=(equipo===1?"puntos1":"puntos2");
 
+    let ve= document.getElementById(idPuntos);
     ve.innerHTML=sumarPuntos;
 
 
@@ -81,6 +84,8 @@ function colocarRespuesta(indice, respuesta, valor, valoresResp, equipo){
 
     let rt = document.getElementById(respuestaTexto);
     let rv = document.getElementById(respuestaValor);
+
+    console.info("etiqquetaEquipo: "+etiqquetaEquipo);
 
     let ve= document.getElementById(etiqquetaEquipo);
     

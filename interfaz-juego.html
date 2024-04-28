@@ -29,12 +29,15 @@
             <p class="puntuacion" id="puntos1"></p>
             <p class="puntuacion" id="puntos2"></p>
         <div class="" id="pregunta">Pregunta</div>
-        <input type="button" value="siguiente" id="btnSiguiente" onclick="siguiente()" >
-    
+        
         </section>  
         <section id="seleccion-equipo">
             <img class="oculto" id="boton-jugar" src="imagenes/jugar.png" alt="Boton iniciar juego con equipo">
             <!--<input type="button" value="Inicializar" id="btnInicializar" onclick="inicializar()" >-->
+            <div id="opciones-equipo2">
+                <p id="">.</p>
+                <input type="button" value="siguiente pregunta" id="btnSiguiente" onclick="siguiente()" >
+            </div>
             <div id="opciones-equipo">
                 <input class="oculto" type="radio" name="juega-equipo" id="juega-equipo1" value="juega-equipo1" onclick="jugarEquipo(1)">
                 <label class="label-equipo" id="label-equipo1" for="juega-equipo1">Equipo 1</label>
