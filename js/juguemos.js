@@ -9,15 +9,17 @@ let preguntaNueva;
 let preguntasUsadas=[];  //Almacena indices de preguntas que ya ocurrieron
 
 let sumarPuntos=0;
-
+let errores=0;
+let animacionPuntuacion;
 
 function inicializar(){
+    actualizarErrores(errores);
     esconderRespuestas();
     esconderContestar();
     iterarPreguntas();
     limpiarRespuestas();
 
-
+    
 }
 
 
@@ -29,7 +31,6 @@ function iterarPreguntas(){
   
         manejoInicialPregunta(preguntaNueva);
         
-        let animacionPuntuacion=resaltarPuntuacionActiva('puntos2', 'puntuacion-activa');
         //console.log("Iteración número", i + 1);
      
         //Agregar pregunta actual a lista de preguntas usadas
@@ -49,4 +50,4 @@ function iterarPreguntas(){
 
 
 
-//noResaltarPuntuacion('puntos1', 'puntuacion-activa',animacionPuntuacion)
+

@@ -31,13 +31,7 @@
         <div class="" id="pregunta">Pregunta</div>
         
         </section>  
-        <section id="seleccion-equipo">
-            <img class="oculto" id="boton-jugar" src="imagenes/jugar.png" alt="Boton iniciar juego con equipo">
-            <!--<input type="button" value="Inicializar" id="btnInicializar" onclick="inicializar()" >-->
-            <div id="opciones-equipo2">
-                <p id="">.</p>
-                <input type="button" value="siguiente pregunta" id="btnSiguiente" onclick="siguiente()" >
-            </div>
+        <section id="seleccion-equipo">            
             <div id="opciones-equipo">
                 <input class="oculto" type="radio" name="juega-equipo" id="juega-equipo1" value="juega-equipo1" onclick="jugarEquipo(1)">
                 <label class="label-equipo" id="label-equipo1" for="juega-equipo1">Equipo 1</label>
@@ -59,14 +53,15 @@
                 <div id="responseValor3"></div>
             </div>
         </section>
-
         <div id="contestar">
-            <form id="introducir-respuesta" class="tooltip" action="">
+            <form id="introducir-respuesta" class="tooltip">
                 <label for="posible-respuesta">Escribe tu respuesta:</label>
-                <input type="text" name="posible-respuesta" id="posible-respuesta">
-                <input type="button" value="enviar" id="btnEnviar" onclick="enviar()" >
-                
+                <input type="text" name="posible-respuesta" id="posible-respuesta" onkeydown="return bloquearEnter(event)" >
+                <input type="button" id="btnEnviar" onclick="enviar()" >
             </form>
+        </div>
+        <div id="opciones-equipo2">
+            <input type="button" value="Siguiente ronda" id="btnSiguiente" onclick="siguiente()" >
         </div>
         
     </main>

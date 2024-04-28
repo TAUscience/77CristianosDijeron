@@ -223,6 +223,7 @@
     color: #333333;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.5vw;
+    width: 60%;
   }
   #myVideo {
     width: 100vw;
@@ -238,7 +239,8 @@
 
     #seleccion-equipo{
         width: auto;
-        margin: 5vh auto;
+        height: auto;
+        margin: 0.5vh auto;
         text-align: center;
     }
 
@@ -256,7 +258,7 @@
     #opciones-equipo{
         display: flex;
         justify-content: center;
-        margin-top: 6vw;
+        margin-top: 4vw;
     }
     .label-equipo{
         font-size: 1.7vw;
@@ -322,6 +324,48 @@
     .contorno{
         border: 2px solid;
         color:red;
+    }
+
+    #btnEnviar{
+        width: 4vw;
+        height: 4vw;
+        background-image: url(../imagenes/jugar.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+    }
+
+    #opciones-equipo2{
+        display: flex;
+        justify-content: center;
+    }
+
+    #btnSiguiente:hover{
+        font-family: inherit;
+        background-color: var(--color-secundario1);
+        border: none;
+        width: 15vw;
+        height: 3vw;
+        font-size: 1.7vw;
+        color: var(--color-principal-claro);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1rem;
+        transform: scale(1.1);
+    }
+    #btnSiguiente{
+        font-family: inherit;
+        background-color: var(--color-principal-obscuro);
+        border: none;
+        width: 15vw;
+        height: 3vw;
+        font-size: 1.7vw;
+        color: var(--color-principal-claro);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1rem;
     }
 
 }

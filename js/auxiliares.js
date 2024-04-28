@@ -122,9 +122,9 @@ function manejoInicialPregunta(indice){
 function actualizarErrores(errores){ //El numero entero que recibe, define la cantidad de errores
   let element = document.getElementById('img-strikes');
   // Para cada numero entero entre 0 y 2 se cambia el marcador de errores mediante imagenes 
-  if(errores==0){
+  if(errores===0){
     element.src="imagenes/error0.png"; //Imagen para 0 errores 
-  } else if (errores==1){
+  } else if (errores===1){
     element.src="imagenes/error1.png";
   } else {
     element.src="imagenes/error2.png";
@@ -167,5 +167,12 @@ function estilo_equipo_activo(idEquipo){
     lbl_inactivo=document.getElementById("label-equipo1");
     lbl_inactivo.classList.add("label-equipo");
     lbl_inactivo.classList.remove("label-equipo-seleccionado");
+  }
+}
+
+function bloquearEnter(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    return false;
   }
 }

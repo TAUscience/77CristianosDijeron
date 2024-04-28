@@ -9,6 +9,17 @@ function jugarEquipo(idEquipo){
   mostrarContestar();
   normalizarPregunta();
   estilo_equipo_activo(idEquipo);
+
+  //Manejo de animación
+  if(idEquipo==1){
+    noResaltarPuntuacion('puntos2', 'puntuacion-activa',animacionPuntuacion);
+    animacionPuntuacion=resaltarPuntuacionActiva('puntos1', 'puntuacion-activa');
+  }else{
+    noResaltarPuntuacion('puntos1', 'puntuacion-activa',animacionPuntuacion);
+    animacionPuntuacion=resaltarPuntuacionActiva('puntos2', 'puntuacion-activa');
+  }
+  
+
 }
 
 function enviar(){
@@ -26,10 +37,11 @@ function enviar(){
     let equipo=(valorActivo==='juega-equipo1'?1:2);
    
     console.info(respuestas);
+    let respuestaEsIncorrecta=false;
 
     for(let i = 0; i < respuestas.length; i++){
 
-      if(respuesta === respuestas[i]){
+      if(respuesta === respuestas[i]){ //Respuesta correcta
         mostrarRespuestas();
 
         console.info("sumarPuntos ->"+sumarPuntos);
@@ -40,11 +52,17 @@ function enviar(){
         console.info("sumarPuntos ->"+sumarPuntos);
         
         colocarRespuesta(i, respuestas[i], valoresResp[i], valoresResp, equipo);
-        break;
+        respuestaEsIncorrecta=false;
+        //break;
       }else{
+        respuestaEsIncorrecta=true;
         console.info("NO EXISTE");
         //break;
       }
+    }
+    if(respuestaEsIncorrecta){
+      errores+=1;
+      actualizarErrores(errores);
     }
 
     let idPuntos=(equipo===1?"puntos1":"puntos2");
@@ -99,8 +117,9 @@ function colocarRespuesta(indice, respuesta, valor, valoresResp, equipo){
 function siguiente(){
   limpiarRespuestas();
   esconderRespuestas();
-  document.getElementById("pregunta").innerHTML="";
-
+  //document.getElementById("pregunta").innerHTML="";
+  errores=0;
+  actualizarErrores(errores);
   iterarPreguntas();
 }
 
